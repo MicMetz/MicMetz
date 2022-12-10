@@ -7,8 +7,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/www",
-    "dev": "cross-env NODE_ENV=production node ./bin/www",
-    "build": "webpack --config webpack.config.js"
+    "dev": "cross-env NODE_ENV=production node ./bin/www"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
