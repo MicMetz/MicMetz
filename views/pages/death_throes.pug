@@ -17,20 +17,12 @@ block content
 
         div(id='documentation' class='ui vertical text menu')
             h2(class="header item")= 'Navigation'
-            //ul(style='list-style-type: none;')
-                //li(class='item doc active' id='li-intro')
             a(class='item doc active' id='li-intro').item(href='#Intro' onclick='showDoc("li-intro", "Intro")') Introduction
-                //li(class='item doc' id='li-project')
             a(class='item doc' id='li-project').item(href='#Project' onclick='showDoc("li-project", "Project")') The Project
-                //li(class='tem doc' id='li-process')
             a(class='tem doc' id='li-process').item(href='#Process' onclick='showDoc("li-process", "Process")') The Process
-                //li(class='item doc' id='li-result')
             a(class='item doc' id='li-result').item(href='#Result' onclick='showDoc("li-result", "Result")') The Result
-                //li(class='item doc' id='li-citation')
             a(class='item doc' id='li-citation').item(href='#Citation' onclick='showDoc("li-citation", "Citation")') Citation
-                //li
             a(href='https://github.com/MicMetz/death-throes') GitHub Repository
-                //li
             a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
 
             script.
@@ -92,12 +84,33 @@ block content
                         a(href="https://en.wikipedia.org/wiki/Command_pattern") Command Pattern.
                 br
                 br
-            video(src='documentation/videos/orc.mp4' controls style='width: 100%;')
-            p.ui.segment
+            video(src='documentation/videos/orc.mp4' controls style='width: 100%;' autoplay muted loop)
 
         div.section#Process(class='ui piled segment' style='display: block;')
             h3.ui.segment The Process
+            ul.ui.segment(style='list-style-type: circle; padding-left: 2em;')
+                li    The process of creating this project was a long and arduous one, but it was also a very addictive one.
+                li    The first step was to create the 3D models for the game, which was done using Blender.
+                li    The next step was to create the animations for the 3D models, which was done using Mixamo, and Unity.
+                li    The next step was to create the 3D environment, which was done using Unity and Adobe Photoshop.
+                li    The next step was to create the UI, which was done using HTML and the JavaScript library&nbsp;
+                        a(href="hammerjs.github.io/") Hammer.js.
+                li    The next step was to create the game logic, which was done using JavaScript.
+                li    The next step was to create the user input, which was done using JavaScript.
+                li    The next step was to create the physics, which was done using Cannon.js.
+                li    The audio was done using Audacity.
+                li    The building of deliverables was done using Webpack.
 
+            br
+            br
+
+            h3.ui.segment Animation Creation & The Frustrations that Come With It
+            video(src='documentation/videos/mistakes.mp4' controls style='width: 100%;' autoplay muted loop)
+            br
+
+            p.ui.segment
+                span
+                |    The process of creating the animations for the 3D models was a very frustrating one.
 
         //div(id='code' class='ui stacked segment' style='display: none;')
         div(id='code' class='ui stacked segment' style='display: none;')
