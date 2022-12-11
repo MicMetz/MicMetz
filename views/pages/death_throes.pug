@@ -22,8 +22,9 @@ block content
             a(class='tem doc' id='li-process').item(href='#Process' onclick='showDoc("li-process", "Process")') The Process
             a(class='item doc' id='li-result').item(href='#Result' onclick='showDoc("li-result", "Result")') The Result
             a(class='item doc' id='li-citation').item(href='#Citation' onclick='showDoc("li-citation", "Citation")') Citation
-            a(href='https://github.com/MicMetz/death-throes') GitHub Repository
-            a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
+        div(class="ui buttons" style="left: 50%; position: relative; transform: translateX(-50%);")
+            a(href='https://github.com/MicMetz/death-throes' class="ui button left attached" style="text-align:center; margin-right: 0.1em;") Git Repo&nbsp;
+            a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/' class="ui button right attached" style="text-align:center; margin-left: 0.1em;") Live Demo
 
             script.
                 function showDoc(id, content) {
