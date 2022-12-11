@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block content
+    h1= title
+
+    ul
+    each photo in photo_list
+        li
+            a(href=photo.url) #{photo.name}
+                //(#{photo.date_of_creation})
+
+    else
+        li There are no photos to list.
