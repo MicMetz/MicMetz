@@ -1,35 +1,15 @@
 doctype html
 html
-    head
-        title All That I Am
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css' type='text/css')
-    style.
-            table.ui.celled img { display : inline-block; }
-
-
-
-            footer { margin : 35px 0 15px 0; text-align : center }
+    include includes/head.pug
 
     body
-        nav.ui.menu.sticky
-            a.item(href='/') Home
-            a.item(href='/about') About
-            a.item(href='/catalog') Catalog
-            a.item(href='/projects') Projects
-            a.item(href='/photography') Photography
-            a.item(href='/contact') Contact
-            middle.ui.item
-                a.item(href='/death_throes') Death Throes (Most Recent Project)
+        include includes/nav.pug
+        include includes/header.pug
+
         main#main
-        h1.ui.center.aligned.header #{title}
-        .ui.container
+            .ui.container
+                block content
 
-
-            block content
-
-
-        block footer
-            footer
-                p © #{new Date().getFullYear()} Metzger, Michael
+        include includes/footer.pug
 
 

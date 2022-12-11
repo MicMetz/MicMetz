@@ -1,0 +1,26 @@
+script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js")
+script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js")
+script(src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js')
+
+script.
+    function showDoc(id) {
+        var doc      = document.getElementById(id);
+        var lis      = document.getElementsByClassName('doc');
+        var sections = document.getElementsByClassName('section');
+        for (var i = 0; i < lis.length; i++) {
+            if (lis[i].id === id) {
+                lis[i].classList.add('active');
+                continue;
+            }
+            lis[i].classList.remove('active');
+        }
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+        }
+        doc.style.display = 'block';
+    }
+
+
+
+block script

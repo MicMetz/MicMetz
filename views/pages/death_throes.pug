@@ -1,40 +1,66 @@
 extends ../layout
 
 block content
-    section: .ui.segment.sidebar
-        a.item(href='#') Introduction
-        a.item(href='#') The Project
-        a.item(href='#') The Process
-        a.item(href='#') The Results
-        a.item(href='#') Citation
-
     div(class='ui container')
-        div
-            h2= 'Navigation'
+        br
+        br
 
-            ul
-                li
-                    a.item(href='#Intro') Introduction
-                li
-                    a.item(href='#') The Project
-                li
-                    a.item(href='#') The Process
-                li
-                    a.item(href='#') The Results
-                li
-                    a.item(href='#') Citation
+        div(class='project-nav')
+            div.ui.three.item.menu
+                a(class = 'item active') Documentation
+                a(class = 'item') Code
+                a(class = 'item') Demo
+
+        br
+        br
+
+        div(id='documentation' class='ui container')
+            h2(class="ui header")= 'Navigation'
+            ul(style='list-style-type: none;')
+                li(class='ui item doc active' id='li-intro')
+                    a.item(href='#Intro' onclick='showDoc("li-intro")') Introduction
+                li(class='ui item doc' id='li-project')
+                    a.item(href='#Project' onclick='showDoc("li-project")') The Project
+                li(class='ui item doc' id='li-process')
+                    a.item(href='#Process') The Process
+                li(class='ui item doc' id='li-result')
+                    a.item(href='#Result') The Result
+                li(class='ui item doc' id='li-citation')
+                    a.item(href='#Citation') Citation
                 li
                     a(href='https://github.com/MicMetz/death-throes') GitHub Repository
                 li
                     a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
 
-        br
-        br
-
-        div
-            p#Intro Death Throes was heavily influenced by the indie game
-               a(href="https://store.steampowered.com/app/422970/Devil_Daggers/") "Devil Daggers".
 
 
 
+
+            div.section#Intro(class='ui piled segment active' style='display: block;')
+                h3.ui.segment Introduction
+                img(src='documentation/DevilDaggers.jpg' alt='Devil Daggers' style='width: 100%;')
+                p.ui.segment
+                    |    My idea behind Death Throes was heavily influenced by the indie game&nbsp;
+                    a(href="https://store.steampowered.com/app/422970/Devil_Daggers/") "Devil Daggers".
+                    |    However due to asset limitations, I was unable to create a game that was as visually appealing as the original.
+                    |    So I instead settled for a more traditional, yet still visually appealing, approach with a medieval theme under the same concept.
+            div.section#Project(class='ui piled segment' style='display: none;')
+                h3.ui.segment The Project
+            div.section#Process(class='ui piled segment' style='display: none;')
+                h3.ui.segment The Process
+
+
+        div(id='code' class='ui stacked segment' style='display: none;')
+            h2(class="ui header")= 'Code'
+
+            p
+                | The code for this project is available on GitHub.
+                a(href='https://github.com/MicMetz/death-throes') GitHub Repository
+
+
+        div(id='demo' class='ui stacked segment' style='display: none;')
+            h2(class="ui header")= 'Demo'
+            p
+                | The demo for this project is available on the web.
+                a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
 

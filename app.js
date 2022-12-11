@@ -5,7 +5,9 @@ var cookieParser = require('cookie-parser');
 const axios      = require('axios');
 var logger       = require('morgan');
 var pug          = require('pug');
-
+const crypto = require('crypto');
+let nonce = crypto.randomBytes(16).toString('base64');
+console.log(nonce);
 
 require('dotenv').config();
 
@@ -24,7 +26,20 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
+
 app.use(helmet());
+app.use(helmet.contentSecurityPolicy());
+app.use(helmet.dnsPrefetchControl());
+app.use(helmet.expectCt());
+app.use(helmet.frameguard());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.hsts());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet.referrerPolicy());
+app.use(helmet.xssFilter());
+
 app.use(compression());
 
 
@@ -68,6 +83,10 @@ function compilePugTemplate(template) {
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
+    res.setHeader(
+        'Content-Security-Policy-Report-Only',
+        "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css; frame-src 'self' 'unsafe-inline';"
+    );
     next(createError(404));
 });
 
