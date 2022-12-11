@@ -18,20 +18,40 @@ block content
             h2(class="ui header")= 'Navigation'
             ul(style='list-style-type: none;')
                 li(class='ui item doc active' id='li-intro')
-                    a.item(href='#Intro' onclick='showDoc("li-intro")') Introduction
+                    a.item(href='#Intro' onclick='showDoc("li-intro", "Intro")') Introduction
                 li(class='ui item doc' id='li-project')
-                    a.item(href='#Project' onclick='showDoc("li-project")') The Project
+                    a.item(href='#Project' onclick='showDoc("li-project", "Project")') The Project
                 li(class='ui item doc' id='li-process')
-                    a.item(href='#Process') The Process
+                    a.item(href='#Process' onclick='showDoc("li-process", "Process")') The Process
                 li(class='ui item doc' id='li-result')
-                    a.item(href='#Result') The Result
+                    a.item(href='#Result' onclick='showDoc("li-result", "Result")') The Result
                 li(class='ui item doc' id='li-citation')
-                    a.item(href='#Citation') Citation
+                    a.item(href='#Citation' onclick='showDoc("li-citation", "Citation")') Citation
                 li
                     a(href='https://github.com/MicMetz/death-throes') GitHub Repository
                 li
                     a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
 
+                script.
+                    function showDoc(id, content) {
+                        console.log(id);
+                        var doc = document.getElementsByClassName('doc');
+                        for (var i = 0; i < doc.length; i++) {
+                            if (doc[i].id === id) {
+                                doc[i].classList.add('active');
+                            } else {
+                                doc[i].classList.remove('active');
+                            }
+                        }
+                        var sec = document.getElementsByClassName('section');
+                        for (var i = 0; i < sec.length; i++) {
+                            if (sec[i].id === content) {
+                                sec[i].style.display = 'block';
+                            } else {
+                                sec[i].style.display = 'none';
+                            }
+                        }
+                    }
 
 
 
@@ -44,11 +64,9 @@ block content
                     a(href="https://store.steampowered.com/app/422970/Devil_Daggers/") "Devil Daggers".
                     |    However due to asset limitations, I was unable to create a game that was as visually appealing as the original.
                     |    So I instead settled for a more traditional, yet still visually appealing, approach with a medieval theme under the same concept.
-            //div.section#Project(class='ui piled segment' style='display: none;')
-            div.section#Project(class='ui piled segment')
+            div.section#Project(class='ui piled segment' style='display: block;')
                 h3.ui.segment The Project
-            //div.section#Process(class='ui piled segment' style='display: none;')
-            div.section#Process(class='ui piled segment')
+            div.section#Process(class='ui piled segment' style='display: block;')
                 h3.ui.segment The Process
 
 
