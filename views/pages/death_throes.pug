@@ -60,13 +60,30 @@ block content
                 h3.ui.segment Introduction
                 img(src='documentation/DevilDaggers.jpg' alt='Devil Daggers' style='width: 100%;')
                 p.ui.segment
-                    |    My idea behind Death Throes was heavily influenced by the indie game&nbsp;
-                    a(href="https://store.steampowered.com/app/422970/Devil_Daggers/") "Devil Daggers".
-                    |    However due to asset limitations, I was unable to create a game that was as visually appealing as the original.
-                    |    So I instead settled for a more traditional, yet still visually appealing, approach with a medieval theme under the same concept.
-            div.section#Project(class='ui piled segment' style='display: block;')
+                    span
+                        |    My idea behind Death Throes was heavily influenced by the indie game&nbsp;
+                        a(href="https://store.steampowered.com/app/422970/Devil_Daggers/") "Devil Daggers".
+                        |    However due to asset limitations, I was unable to create a game that was as visually appealing as the original.
+                        |    So I instead settled for a more traditional, yet still visually appealing, approach with a medieval theme under the same concept.
+            div.section#Project(class='ui piled segment' style='display: none;')
                 h3.ui.segment The Project
-            div.section#Process(class='ui piled segment' style='display: block;')
+                img(src='documentation/images/LobbyCreation.PNG' alt='Lobby Creation' style='width: 100%;')
+                p.ui.segment
+                    span
+                        |    The primary assets used in this project were assembled from and with a variety of sources, but the most key asset was&nbsp;
+                        a(href="https://www.Unity.com/") Unity's 3D editor.
+                    br
+                    br
+                    span
+                        |    Also of note, is the engine behind the game, a javascript WebGL library called&nbsp;
+                        a(href="https://threejs.org/") THREE.js.
+                        |    This library was used to render the 3D environment, the 3D models, their animations, lighting, and the physics.
+                        |    THREE.js was also used to create the UI, which was a combination of HTML and CSS.
+                    br
+                    br
+                    span
+                        |    The game was created using the MVC design pattern, with the model being the game logic, the view being the UI, and the controller being the user input.
+            div.section#Process(class='ui piled segment' style='display: none;')
                 h3.ui.segment The Process
 
 
@@ -75,14 +92,16 @@ block content
             h2(class="ui header")= 'Code'
 
             p
-                | The code for this project is available on GitHub.
-                a(href='https://github.com/MicMetz/death-throes') GitHub Repository
+                span
+                    | The code for this project is available on GitHub.
+                    a(href='https://github.com/MicMetz/death-throes') GitHub Repository
 
 
         //div(id='demo' class='ui stacked segment' style='display: none;')
         div(id='demo' class='ui stacked segment' style='display: none;')
             h2(class="ui header")= 'Demo'
             p
-                | The demo for this project is available on the web.
-                a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
+                span
+                    | The demo for this project is available on the web.
+                    a(href='https://webdevgroupcu.org/mime9599/digital-animations/death-throes/dist/') Live Demo
 
